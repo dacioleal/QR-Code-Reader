@@ -14,6 +14,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var isReading = false;
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    var audioPlayer: AVAudioPlayer?
     
     @IBOutlet weak var viewPreview: UIView!
     
@@ -22,9 +23,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+        loadBeepSound()
     }
 
     @IBAction func startStopReading(sender: UIBarButtonItem) {
@@ -92,7 +91,25 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 performSelectorOnMainThread("stopReading", withObject: nil, waitUntilDone: false)
                 performSelectorOnMainThread("setTitle:", withObject: "Start", waitUntilDone: false)
                 isReading = false
+                
+                if let player = audioPlayer {
+                    player.play()
+                }
             }
+        }
+    }
+    
+    func loadBeepSound() {
+        
+        let beepFilePath = NSBundle.mainBundle().pathForResource("beep", ofType: "mp3")
+        if let beepPath = beepFilePath {
+            let beepURL = NSURL(fileURLWithPath: beepPath)
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOfURL: beepURL)
+            } catch _ {
+                audioPlayer = nil
+            }
+            audioPlayer?.prepareToPlay()
         }
     }
 }

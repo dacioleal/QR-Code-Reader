@@ -13,6 +13,7 @@
 		F3B56B181C8488DA00B06181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3B56B171C8488DA00B06181 /* Assets.xcassets */; };
 		F3B56B1B1C8488DA00B06181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B56B191C8488DA00B06181 /* LaunchScreen.storyboard */; };
 		F3B56B231C8491EF00B06181 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B56B221C8491EF00B06181 /* AVFoundation.framework */; };
+		F3B56B251C84AF6900B06181 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F3B56B241C84AF6900B06181 /* beep.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F3B56B1A1C8488DA00B06181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3B56B1C1C8488DA00B06181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3B56B221C8491EF00B06181 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F3B56B241C84AF6900B06181 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				F3B56B171C8488DA00B06181 /* Assets.xcassets */,
 				F3B56B191C8488DA00B06181 /* LaunchScreen.storyboard */,
 				F3B56B1C1C8488DA00B06181 /* Info.plist */,
+				F3B56B241C84AF6900B06181 /* beep.mp3 */,
 			);
 			path = QRreader;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 			files = (
 				F3B56B1B1C8488DA00B06181 /* LaunchScreen.storyboard in Resources */,
 				F3B56B181C8488DA00B06181 /* Assets.xcassets in Resources */,
+				F3B56B251C84AF6900B06181 /* beep.mp3 in Resources */,
 				F3B56B161C8488DA00B06181 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
