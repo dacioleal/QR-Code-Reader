@@ -33,11 +33,13 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             if startReading() {
                 labelStatus.text = "Scanning for QR code..."
                 barButtonStart.title = "Stop"
-            } else {
-                stopReading()
-                barButtonStart.title = "Start"
             }
+        } else {
+            stopReading()
+            barButtonStart.title = "Start"
         }
+        
+        isReading = !isReading
     }
     
     func startReading() -> Bool {
@@ -89,7 +91,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             if metadataObject.type == AVMetadataObjectTypeQRCode {
                 labelStatus.performSelectorOnMainThread("setText:", withObject:metadataObject.stringValue, waitUntilDone: false)
                 performSelectorOnMainThread("stopReading", withObject: nil, waitUntilDone: false)
-                performSelectorOnMainThread("setTitle:", withObject: "Start", waitUntilDone: false)
+                barButtonStart.performSelectorOnMainThread("setTitle:", withObject: "Start", waitUntilDone: false)
                 isReading = false
                 
                 if let player = audioPlayer {
