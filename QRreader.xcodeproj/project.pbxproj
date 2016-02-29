@@ -12,6 +12,7 @@
 		F3B56B161C8488DA00B06181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B56B141C8488DA00B06181 /* Main.storyboard */; };
 		F3B56B181C8488DA00B06181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3B56B171C8488DA00B06181 /* Assets.xcassets */; };
 		F3B56B1B1C8488DA00B06181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B56B191C8488DA00B06181 /* LaunchScreen.storyboard */; };
+		F3B56B231C8491EF00B06181 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B56B221C8491EF00B06181 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F3B56B171C8488DA00B06181 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3B56B1A1C8488DA00B06181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3B56B1C1C8488DA00B06181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3B56B221C8491EF00B06181 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B56B231C8491EF00B06181 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +41,7 @@
 		F3B56B041C8488DA00B06181 = {
 			isa = PBXGroup;
 			children = (
+				F3B56B221C8491EF00B06181 /* AVFoundation.framework */,
 				F3B56B0F1C8488DA00B06181 /* QRreader */,
 				F3B56B0E1C8488DA00B06181 /* Products */,
 			);
@@ -96,6 +100,7 @@
 				TargetAttributes = {
 					F3B56B0C1C8488DA00B06181 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 3CAF8YGZEM;
 					};
 				};
 			};
@@ -247,10 +252,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = QRreader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dacioleal.QRreader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -258,10 +267,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = QRreader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dacioleal.QRreader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
