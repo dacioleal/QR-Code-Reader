@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,19 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q2x-4E-3d5">
-                                <rect key="frame" x="20" y="20" width="560" height="478"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2x-4E-3d5">
+                                <rect key="frame" x="20" y="20" width="560" height="486"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Press Start button to read a QR code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuv-wP-XNr">
-                                        <rect key="frame" x="139" y="217" width="282" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Start button to read a QR code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuv-wP-XNr">
+                                        <rect key="frame" x="139" y="233" width="282" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="iuv-wP-XNr" firstAttribute="centerY" secondItem="Q2x-4E-3d5" secondAttribute="centerY" id="hX6-pO-rv3"/>
+                                    <constraint firstItem="iuv-wP-XNr" firstAttribute="centerX" secondItem="Q2x-4E-3d5" secondAttribute="centerX" id="mi0-BY-NC6"/>
+                                </constraints>
                             </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f91-uj-tzn">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f91-uj-tzn">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="flexibleSpace" id="IKz-fn-qJr"/>
@@ -41,15 +46,50 @@
                                     <barButtonItem systemItem="flexibleSpace" id="Xyt-SI-5gI"/>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR code reader is not yet running..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04N-Ki-dOw">
-                                <rect key="frame" x="20" y="516" width="290" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR code reader is not yet running..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04N-Ki-dOw">
+                                <rect key="frame" x="20" y="516" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3ym-iQ-Yu2"/>
+                                    <constraint firstAttribute="width" constant="280" id="aRv-X3-ZPm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="aRv-X3-ZPm"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="f91-uj-tzn" secondAttribute="trailing" constant="-20" id="6Ag-0e-syg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f91-uj-tzn" secondAttribute="bottom" id="7mj-Pa-alE"/>
+                            <constraint firstItem="f91-uj-tzn" firstAttribute="top" secondItem="04N-Ki-dOw" secondAttribute="bottom" constant="10" id="Gia-je-Oqi"/>
+                            <constraint firstItem="f91-uj-tzn" firstAttribute="top" secondItem="Q2x-4E-3d5" secondAttribute="bottom" constant="50" id="T2M-Ur-Hy9"/>
+                            <constraint firstItem="Q2x-4E-3d5" firstAttribute="top" secondItem="04N-Ki-dOw" secondAttribute="bottom" constant="-106" id="TxX-Zc-IZt"/>
+                            <constraint firstItem="f91-uj-tzn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Xh8-Y4-AYg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f91-uj-tzn" secondAttribute="trailing" id="Ywx-LY-ht9"/>
+                            <constraint firstItem="Q2x-4E-3d5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bVg-fk-8WM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q2x-4E-3d5" secondAttribute="trailing" id="cf2-fa-TDU"/>
+                            <constraint firstItem="f91-uj-tzn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="20" id="dxP-1Q-MKA"/>
+                            <constraint firstItem="Q2x-4E-3d5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rXI-QX-o1K"/>
+                            <constraint firstItem="f91-uj-tzn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="rlo-yz-4Eq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="04N-Ki-dOw" secondAttribute="trailing" id="sL1-Lk-xcl"/>
+                            <constraint firstItem="04N-Ki-dOw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yVI-Bv-XSp"/>
+                            <constraint firstItem="Q2x-4E-3d5" firstAttribute="top" secondItem="04N-Ki-dOw" secondAttribute="bottom" constant="10" id="zjI-uy-urE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="TxX-Zc-IZt"/>
+                                <exclude reference="zjI-uy-urE"/>
+                                <exclude reference="6Ag-0e-syg"/>
+                                <exclude reference="Xh8-Y4-AYg"/>
+                                <exclude reference="Ywx-LY-ht9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="barButtonStart" destination="BMI-c2-BrP" id="l4A-93-6Yi"/>
@@ -59,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="465"/>
+            <point key="canvasLocation" x="512" y="478"/>
         </scene>
     </scenes>
 </document>
